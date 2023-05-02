@@ -1,0 +1,23 @@
+input { 
+  font-family: "メイリオ", sans-serif; font-weight:600; font-size:x-large;
+}
+
+table {
+   text-align: right;
+ }
+ 
+ .flame {
+   text-align: right;
+ }
+ 
+ .addition {
+   width: 40px;
+ }
+ 
+ .divide {
+   width: 40px;
+ }
+ 
+ .zero {
+   width: 83px;
+ }
