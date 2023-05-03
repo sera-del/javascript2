@@ -1,23 +1,19 @@
-input { 
-  font-family: "メイリオ", sans-serif; font-weight:600; font-size:x-large;
+.flame {
+    text-align: right;
 }
 
-table {
-   text-align: right;
- }
- 
- .flame {
-   text-align: right;
- }
- 
- .addition {
-   width: 40px;
- }
- 
- .divide {
-   width: 40px;
- }
- 
- .zero {
-   width: 83px;
- }
+input{
+  box-sizing: border-box;
+  width: 53%;
+  height: 3.5rem;
+  font-size: 1.6rem;
+  text-align: right;
+  padding: 0 0.75rem;
+}
+
+button{
+  font-size: 18px;
+  width: 10%;
+  color: #333;
+  border-color: #fff;
+}

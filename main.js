@@ -1,50 +1,60 @@
-let input1p = document.getElementById('input1');
-let operator;
-let input2;
-let shousuu = 0;
-let toBeErased = 0;
+// データ
+var result = "";
+// =で計算したかどうか
+var is_calc = false;
 
-function clr() {
- input1p.value = "";
- shousuu = 0;
+// 初期表示
+window.onload = function () {
+  result = document.getElementById('result');
+};
+
+// Cキー押下
+function c_click(){
+  result.value = "0";
+  is_calc = false;
 }
 
-function clrAll() {
- input1p.value = "";
- input2 = "";
- operator = "";
- shousuu = 0;
+// 数字キー押下
+function num_click(val){
+  if(is_calc)  result.value = "0";
+  is_calc = false;  
+
+  if(result.value =="0" && val == "0"){
+    result.value = "0";
+  }else if(result.value == "0" && val == "."){
+    result.value = "0.";
+  }else if(result.value == "0"){
+    result.value = val;
+  }else{
+    result.value += val;
+  }
 }
 
-function kazu(n) {
- if (toBeErased == 1) {
- toBeErased = 0;
- input1p.value = "";
- }
- if (n == ".") {
- if (shousuu == 1) return;
- if (input1p.value == "") input1p.value = "0.";
- else input1p.value = input1p.value + ".";
-      shousuu = 1;
- return;
- }
- 
-if (input1p.value == "0") input1p.value = "";
-    input1p.value = input1p.value + n;
+// 演算子キー押下
+function ope_click(val){
+  if(is_calc)  is_calc = false;
+  
+  if(is_ope_last()){
+    result.value = result.value.slice(0, -1) + val;
+  } else {
+    result.value += val;
+  }
 }
 
-function kigou(k) {
-if (operator != "") { equal(); }
- operator = k;
- input2 = input1p.value;
- toBeErased = 1; 
+// =キークリック
+function equal_click(){
+  if(is_ope_last())  result.value = result.value.slice(0, -1);
+
+  var temp = new Function("return " + result.value.replaceAll("×", "*").replaceAll("÷", "/"))();
+  if(temp == Infinity || Number.isNaN(temp)){
+    result.value = "Error";
+  }else{
+    result.value = temp;
+    is_calc = true;
+  }
 }
 
-function equal() {
- if (operator == "＋") { input1p.value = Number(input2) + Number(input1p.value); }
- else if (operator == "－") { input1p.value = Number(input2) - Number(input1p.value); }
- else if (operator == "×") { input1p.value = Number(input2) * Number(input1p.value); }
- else if (operator == "÷") { input1p.value = Number(input2) / Number(input1p.value); }
- operator = "＝";
- toBeErased = 1;
-} 
+// 入力されている値が演算子かどうか
+function is_ope_last(){
+  return ["+","-","×","÷"].includes(result.value.toString().slice(-1));
+}

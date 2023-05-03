@@ -7,35 +7,44 @@
   </head>
   
   <body>
+   
+   
+    
+      <input readonly id="result" type="text" value="0" class="flame">
+    
+    
+    <div>
+      <button onclick="num_click(this.innerHTML)">7</button>
+      <button onclick="num_click(this.innerHTML)">8</button>
+      <button onclick="num_click(this.innerHTML)">9</button>
+      <button onclick="ope_click(this.innerHTML)">÷</button>
+    </div>
+    
+    <div>
+      <button onclick="num_click(this.innerHTML)">4</button>
+      <button onclick="num_click(this.innerHTML)">5</button>
+      <button onclick="num_click(this.innerHTML)">6</button>
+      <button onclick="ope_click(this.innerHTML)">×</button>
+    </div>
+    
+    <div>
+      <button onclick="num_click(this.innerHTML)">1</button>
+      <button onclick="num_click(this.innerHTML)">2</button>
+      <button onclick="num_click(this.innerHTML)">3</button>
+      <button onclick="ope_click(this.innerHTML)">-</button>
+    </div>
+    
+    <div>
+      <button onclick="num_click(this.innerHTML)">0</button>
+      <button onclick="num_click(this.innerHTML)">.</button>
+      <button onclick="equal_click()">=</button>
+      <button onclick="ope_click(this.innerHTML)">+</button>
+      <button onclick="c_click()">C</button>
+    </div>
+    
   
-  <table>
-<tr><td><input type=text id=input1 size=13 readonly class="flame"></td></tr>
-
-<tr><td><input type=button value="ＣＥ" onclick=clr()>
- <input type=button value="ＣＡ" onclick=clrAll()>
- <input type=button value="＝" onclick=equal()></td></tr>
- 
-<tr><td><input type=button value="１" onclick=kazu("1")>
- <input type=button value="２" onclick=kazu("2")>
- <input type=button value="３" onclick=kazu("3")>
- <input type=button value="＋" onclick=kigou("＋")></td></tr>
- 
-<tr><td><input type=button value="４" onclick=kazu("4")>
- <input type=button value="５" onclick=kazu("5")>
- <input type=button value="６" onclick=kazu("6")>
- <input type=button value="－" onclick=kigou("－")></td></tr>
- 
-<tr><td><input type=button value="７" onclick=kazu("7")>
- <input type=button value="８" onclick=kazu("8")>
- <input type=button value="９" onclick=kazu("9")>
- <input type=button value="×" onclick=kigou("×") class="addition"></td></tr>
- 
-<tr><td><input type=button value="０" onclick=kazu("0") class="zero">
- <input type=button value="．" onclick=kazu(".")>
- <input type=button value="÷" onclick=kigou("÷") class="divide"></td></tr>
-</table> 
-    
-    
+   
+   
     <script src="main.js"></script>
   </body>
 </html>
