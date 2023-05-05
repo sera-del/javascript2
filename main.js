@@ -58,3 +58,20 @@ function equal_click(){
 function is_ope_last(){
   return ["+","-","×","÷"].includes(result.value.toString().slice(-1));
 }
+
+//小数点押下時
+function point(val) {
+  if(is_calc) is_calc = false;
+  
+  if(is_point_last()) {
+    result.value = result.value.slice(0,-1) + val;
+  }
+  else {
+    result.value += val;
+  }
+}
+
+//入力されている値が小数点かどうか
+function is_point_last() {
+  return ["."].includes(result.value.toString().slice(-1));
+}
